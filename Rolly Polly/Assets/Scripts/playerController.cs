@@ -8,10 +8,11 @@ public class playerController : MonoBehaviour {
     public float maxJumpAngle; //The maximum acceptable angle to jump off of: 1.0 = zero degrees (flat), 0.3 is about 60 degrees (steep).
     public float DIFactor; // Mid-Air Directional Influence Denominator. Recommended: 2 or 3.
     public float friction;
+    public bool canJump;
 
     private Rigidbody rb;
     private Vector3 jumpForce;
-    private bool canJump;
+    //private bool canJump;
     private Vector3 contactNormal;
     private Vector3 movement;
 
@@ -29,13 +30,15 @@ public class playerController : MonoBehaviour {
 
         movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
+        /*
         if (Input.GetButtonDown("Jump") && canJump)
         {
 
-
-            rb.AddForce(jumpForce);
             canJump = false;
+            rb.AddForce(jumpForce);
+            
         }
+          */
         
         if(canJump)
         {
@@ -81,13 +84,24 @@ public class playerController : MonoBehaviour {
 
 	}
 
+    void Update()
+    {
+        if (Input.GetButtonDown("Jump") && canJump)
+        {
+
+            canJump = false;
+            rb.AddForce(jumpForce);
+
+        }
+    }
+
     void OnCollisionStay(Collision collisionInfo)
     {
         //Debug.Log("OnCollisionEnter activated");
         contactNormal = collisionInfo.contacts[0].normal;
         //Debug.Log(contactNormal);
 
-        if (contactNormal.y > 0.3)
+        if (contactNormal.y > maxJumpAngle)
         {
             canJump = true;
             jumpForce = contactNormal * jumpPower;
