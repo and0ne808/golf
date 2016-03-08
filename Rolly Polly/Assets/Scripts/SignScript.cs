@@ -18,7 +18,6 @@ public class SignScript : MonoBehaviour {
         img.color = Color.clear;
 	}
 	
-	// Update is called once per frame
 	void OnTriggerEnter (Collider collider) 
     {
         text.text = signText;

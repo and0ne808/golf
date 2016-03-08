@@ -4,6 +4,8 @@ using System.Collections;
 public class playerController : MonoBehaviour {
 
     public float speed;
+    private float normalSpeed;
+    private float superSpeed;
     public float jumpPower;
     public float maxJumpAngle; //The maximum acceptable angle to jump off of: 1.0 = zero degrees (flat), 0.3 is about 60 degrees (steep).
     public float DIFactor; // Mid-Air Directional Influence Denominator. Recommended: 2 or 3.
@@ -29,6 +31,15 @@ public class playerController : MonoBehaviour {
     public AudioSource pickUp;
     public static AudioSource pickupBlueberry;
 
+    public static bool megaJump;
+    public static bool megaStrength;
+    public static bool megaSpeed;
+    public static bool wallJump;
+
+    public static float megaSpeedTimer;
+    public static float megaJumpTimer;
+    public static float megaStrengthTimer;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -39,6 +50,12 @@ public class playerController : MonoBehaviour {
         initial_z = this.transform.position.z;
         //audio = GetComponent<AudioSource>();
         pickupBlueberry = pickUp;
+        megaJump = false;
+        megaStrength = false;
+        megaSpeed = false;
+        wallJump = false;
+        normalSpeed = speed;
+        superSpeed = speed + speed;
     }
 
 	void FixedUpdate () 
@@ -75,7 +92,7 @@ public class playerController : MonoBehaviour {
         }
 
         //calculate friction
-        Debug.Log(movement.magnitude);
+        //Debug.Log(movement.magnitude);
         if (canJump && movement.magnitude < frictionThreshold)
         {
             rb.drag = groundDrag; // let go of controller
@@ -168,6 +185,21 @@ public class playerController : MonoBehaviour {
             jumpSound.Play();
 
         }
+        // SUPER SPEED Timer Logic
+        if (megaSpeedTimer > 0)
+        {
+            megaSpeed = true;
+            speed = superSpeed;
+            megaSpeedTimer -= Time.deltaTime;
+            //Debug.Log(megaSpeedTimer);
+        }
+        else
+        {
+            megaSpeedTimer = 0;
+            speed = normalSpeed;
+            megaSpeed = false;
+
+        }
     }
 
     void OnCollisionStay(Collision collisionInfo)
@@ -181,6 +213,8 @@ public class playerController : MonoBehaviour {
             canJump = true;
             jumpForce = contactNormal * jumpPower;
         }
+
+
     }
 
     void OnCollisionExit(Collision collision)

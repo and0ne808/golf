@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class gameController : MonoBehaviour {
 
     public static bool levelComplete;
+    public AudioSource music;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,15 @@ public class gameController : MonoBehaviour {
             levelComplete = true;
             Debug.Log("Level Complete");
             SceneManager.LoadScene(0);
+        }
+
+        if(playerController.megaSpeed)
+        {
+            music.pitch = 2f;
+        }
+        else
+        {
+            music.pitch = 1;
         }
 	}
 }
