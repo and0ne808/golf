@@ -17,18 +17,23 @@ public class StatusText : MonoBehaviour {
 
         currentString = "";
 
+        if (playerController.wallJump)
+        {
+            currentString += " WALL JUMP \n";
+        }
 	if (playerController.megaSpeed)
     {
-        currentString += " MEGA SPEED: " + Math.Round(playerController.megaSpeedTimer, 0);
+        currentString += " MEGA SPEED: " + Math.Round(playerController.megaSpeedTimer, 0) + "\n";
     }
     if (playerController.megaStrength)
     {
-        currentString += " MEGA STRENGTH " + Math.Round(playerController.megaStrengthTimer, 0);
+        currentString += " MEGA STRENGTH " + Math.Round(playerController.megaStrengthTimer, 0) + "\n";
     }
     if (playerController.megaJump)
     {
-        currentString += "MEGA JUMP: " + Math.Round(playerController.megaJumpTimer, 0);
+        currentString += " MEGA JUMP: " + Math.Round(playerController.megaJumpTimer, 0) + "\n";
     }
+
 
     text.text = currentString;
 

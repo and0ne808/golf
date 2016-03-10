@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour {
 
     public float speed;
     private float normalSpeed;
     private float superSpeed;
+
     public float jumpPower;
+    private float superJumpPower;
+    private float normalJumpPower;
+
     public float maxJumpAngle; //The maximum acceptable angle to jump off of: 1.0 = zero degrees (flat), 0.3 is about 60 degrees (steep).
     public float DIFactor; // Mid-Air Directional Influence Denominator. Recommended: 2 or 3.
     public float frictionThreshold;
@@ -17,7 +22,6 @@ public class playerController : MonoBehaviour {
 
     private Rigidbody rb;
     private Vector3 jumpForce;
-    //private bool canJump;
     private Vector3 contactNormal;
     private Vector3 movement;
     private float initial_x;
@@ -40,6 +44,12 @@ public class playerController : MonoBehaviour {
     public static float megaJumpTimer;
     public static float megaStrengthTimer;
 
+    private float redValue;
+    private float greenValue;
+    private float blueValue;
+
+    private MeshRenderer meshRend;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -56,6 +66,18 @@ public class playerController : MonoBehaviour {
         wallJump = false;
         normalSpeed = speed;
         superSpeed = speed + speed;
+
+        normalJumpPower = jumpPower;
+        superJumpPower = jumpPower + jumpPower;
+
+        meshRend = GetComponent<MeshRenderer>();
+        redValue = 1f;
+        greenValue = 1f;
+        blueValue = 1f;
+
+        megaStrengthTimer = 0;
+        megaJumpTimer = 0;
+        megaSpeedTimer = 0;
     }
 
 	void FixedUpdate () 
@@ -167,6 +189,12 @@ public class playerController : MonoBehaviour {
         if (this.transform.position.y < fallThreshold)
         {
             dieSound.Play();
+            megaSpeedTimer = 0;
+            megaJumpTimer = 0;
+            megaStrengthTimer = 0;
+            redValue = 1f;
+            greenValue = 1f;
+            blueValue = 1f;
             rb.velocity = Vector3.zero;
             this.transform.position = new Vector3(initial_x, initial_y, initial_z);
             rb.Sleep();
@@ -185,13 +213,19 @@ public class playerController : MonoBehaviour {
             jumpSound.Play();
 
         }
-        // SUPER SPEED Timer Logic
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        // MEGA SPEED Timer Logic----------------------------------------
         if (megaSpeedTimer > 0)
         {
+            redValue = 1f;
+            greenValue = 1f;
+            blueValue = (10 - megaSpeedTimer) / 10;
             megaSpeed = true;
             speed = superSpeed;
             megaSpeedTimer -= Time.deltaTime;
-            //Debug.Log(megaSpeedTimer);
         }
         else
         {
@@ -200,6 +234,46 @@ public class playerController : MonoBehaviour {
             megaSpeed = false;
 
         }
+
+        // MEGA JUMP Timer Logic-------------------------------------------
+        if (megaJumpTimer > 0)
+        {
+            redValue = (10 - megaJumpTimer) / 10;
+            greenValue = (10 - megaJumpTimer) / 10;
+            blueValue = 1f;
+            megaJump = true;
+            jumpForce = new Vector3(0.0f, superJumpPower, 0.0f);
+            megaJumpTimer -= Time.deltaTime;
+        }
+        else
+        {
+            megaJumpTimer = 0;
+            jumpForce = new Vector3(0.0f, normalJumpPower, 0.0f);
+            megaJump = false;
+        }
+
+        // MEGA STRENGTH Timer Logic-------------------------------------------
+        if (megaStrengthTimer > 0)
+        {
+            redValue = (10 - megaStrengthTimer) / 10;
+            blueValue = (10 - megaStrengthTimer) / 10;
+            greenValue = 1f;
+            megaStrength = true;
+            megaStrengthTimer -= Time.deltaTime;
+        }
+        else
+        {
+            megaStrengthTimer = 0;
+            megaStrength = false;
+        }
+
+        // WALL JUMP LOGIC
+        if(wallJump)
+        {
+            maxJumpAngle = -0.2f;
+        }
+
+        meshRend.material.color = new Color(redValue, greenValue, blueValue);
     }
 
     void OnCollisionStay(Collision collisionInfo)
@@ -211,7 +285,14 @@ public class playerController : MonoBehaviour {
         if (contactNormal.y > maxJumpAngle)
         {
             canJump = true;
-            jumpForce = contactNormal * jumpPower;
+            if (megaJump)
+            {
+                jumpForce = contactNormal * superJumpPower;
+            }
+            else
+            {
+                jumpForce = contactNormal * normalJumpPower;
+            }
         }
 
 
@@ -221,5 +302,7 @@ public class playerController : MonoBehaviour {
     {
         canJump = false;
     }
+
+
 
 }

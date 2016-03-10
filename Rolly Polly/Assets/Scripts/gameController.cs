@@ -6,10 +6,12 @@ public class gameController : MonoBehaviour {
 
     public static bool levelComplete;
     public AudioSource music;
+    public string playerPrefsString;
 
 	// Use this for initialization
 	void Start () {
         levelComplete = false;
+        //PlayerPrefs.SetString("RolyPolyVillage1Completed", "true");
 	}
 	
 	// Update is called once per frame
@@ -18,7 +20,9 @@ public class gameController : MonoBehaviour {
         {
             levelComplete = true;
             Debug.Log("Level Complete");
-            SceneManager.LoadScene(0);
+            PlayerPrefs.SetString(playerPrefsString, "true");
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("BlueberriesCollected");
         }
 
         if(playerController.megaSpeed)
