@@ -21,7 +21,7 @@ public class cameraController : MonoBehaviour {
         {
 
             zoom += (Input.GetAxis("RightV"));
-            Debug.Log(zoom);
+            //Debug.Log(zoom);
             zoomVector = new Vector3(0, -zoom, zoom);
         }
 

@@ -6,35 +6,58 @@ public class optionManager : MonoBehaviour {
 
     static public string selected;
     public float deadZone;
+    private float optionTime;
+    private bool timerActive;
+    public float selectionDelay; //amount of time before you can select a different option
     AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
-        selected = "again";
+        timerActive = false;
+        optionTime = 0;
+        selected = "none";
         audio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log("Selected");
 
-        if(Input.GetAxis("Horizontal") > deadZone && selected != "options")
+        if(timerActive)
         {
-            audio.Play();
-            selected = "options";
+            optionTime += Time.deltaTime;
+
+            if(optionTime > selectionDelay)
+            {
+                optionTime = 0;
+                timerActive = false;
+            }
         }
-        else if(Input.GetAxis("Horizontal") < -deadZone && selected != "credits")
+
+        if(!timerActive && Input.GetAxis("Horizontal") > deadZone && selected != "data")
         {
+            optionTime = 0;
+            timerActive = true;
+            audio.Play();
+            selected = "data";
+        }
+        else if (!timerActive && Input.GetAxis("Horizontal") < -deadZone && selected != "credits")
+        {
+            optionTime = 0;
+            timerActive = true;
             audio.Play();
             selected = "credits";
         }
-        else if (Input.GetAxis("Vertical") > deadZone && selected != "play")
+        else if (!timerActive && Input.GetAxis("Vertical") > deadZone && selected != "play")
         {
+            optionTime = 0;
+            timerActive = true;
             audio.Play();
             selected = "play";
         }
-        else if (Input.GetAxis("Vertical") < -deadZone && selected != "quit")
+        else if (!timerActive && Input.GetAxis("Vertical") < -deadZone && selected != "quit")
         {
+            optionTime = 0;
+            timerActive = true;
             audio.Play();
             selected = "quit";
         }
@@ -52,12 +75,17 @@ public class optionManager : MonoBehaviour {
             }
             else if (selected == "credits")
             {
-                Application.Quit();
+                audio.Play();
+                SceneManager.LoadScene("CreditsScreen");
             }
-            else if (selected == "options")
+            else if (selected == "data")
             {
+                /*
                 PlayerPrefs.DeleteAll();
                 Debug.Log("Player Prefs Deleted");
+                 */
+                audio.Play();
+                SceneManager.LoadScene("EraseData");
             }
         }
 	}

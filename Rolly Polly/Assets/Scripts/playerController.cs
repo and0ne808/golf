@@ -298,6 +298,8 @@ public class playerController : MonoBehaviour {
 
     }
 
+
+
     void OnCollisionExit(Collision collision)
     {
         canJump = false;
