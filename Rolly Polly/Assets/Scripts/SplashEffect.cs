@@ -19,7 +19,7 @@ public class SplashEffect : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.attachedRigidbody)
+        if (other.attachedRigidbody.CompareTag("Player"))
         {
             Debug.Log("On Trigger Enter Activated");
             particleSplash.Emit(20);
@@ -28,7 +28,7 @@ public class SplashEffect : MonoBehaviour {
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.attachedRigidbody)
+        if (other.attachedRigidbody.CompareTag("Player"))
         {
             Debug.Log("On Trigger Exit Activated");
             particleSplash.Emit(20);

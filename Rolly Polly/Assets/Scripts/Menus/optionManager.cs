@@ -66,8 +66,16 @@ public class optionManager : MonoBehaviour {
         {
             if(selected == "play")
             {
-                audio.Play();
-                SceneManager.LoadScene("MainHub");
+                if (PlayerPrefs.GetString("RolyPolyVillage1Completed") != "true")
+                {
+                    audio.Play();
+                    SceneManager.LoadScene("Acceptance Letter");
+                }
+                else
+                {
+                    audio.Play();
+                    SceneManager.LoadScene("MainHub");
+                }
             }
             else if(selected == "quit")
             {
