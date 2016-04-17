@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class NPCScript : MonoBehaviour {
 
+    /*
     public string signText;
     public GameObject player;
     public Canvas canvas;
@@ -23,6 +24,7 @@ public class NPCScript : MonoBehaviour {
     {
         text.text = signText;
         img.color = new Color(0, 0, 0, 0.5F);
+        Debug.Log("Triggered");
 	}
     void OnTriggerExit(Collider collider)
     {
@@ -37,4 +39,6 @@ public class NPCScript : MonoBehaviour {
             img.color = new Color(0, 0, 0, 0);
         }
     }
+     * */
 }
+    

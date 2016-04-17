@@ -17,110 +17,110 @@ public class TedrickHubScript : MonoBehaviour {
         img = panel.GetComponent<Image>();
         img.color = Color.clear;
 
-        signText = "Welcome to the Olympic Training Center sonny-boy! My name is Albert, I've been coaching Roly Polys for YEARS! We will be starting your training in Roly Poly Village.";
+        signText = "TEDRICK: You must be the new guy. Hans, was it? I'm Tedrick! I'm the best Roly Poly Racer there is!";
 
         //ROLY POLY VILLAGE
         if(PlayerPrefs.GetString("RolyPolyVillage1Completed") == "true")
         {
-            signText = "This next stage is your first obstacle course. Race to the goal as quickly as you can! No dilly-dallying!";
+            signText = "TEDRICK: I got three stars on my first try, I bet you won't even come close!";
         }
         if(PlayerPrefs.GetInt("RolyPolyVillage2Stars") > 0)
         {
             if(PlayerPrefs.GetInt("LastStars") == 1)
             {
-                signText = "Hans! Your performance was abismal! TERRIBLE I SAY! You need to go FASTER! I would try again before I moved on to Critter Cave...";
+                signText = "TEDRICK: HAHAHA! Boy are you SLOW! Better luck next time bud!";
             }
             else if(PlayerPrefs.GetInt("LastStars") == 2)
             {
-                signText = "Hans! That wasn't too shabby! Next we will be training at Critter Cave.";
+                signText = "TEDRICK: I knew you couldn't get three stars!";
             }
             else if (PlayerPrefs.GetInt("LastStars") == 3)
             {
-                signText = "EXCELLENT WORK HANS! We will continue training at Critter Cave whenever you are ready.";
+                signText = "TEDRICK: Hmm... That was beginner's luck!";
             }
 
         }
         //CRITTER CAVE
         if (PlayerPrefs.GetString("CritterCave1Completed") == "true")
         {
-            signText = "Are you ready to race through the obstacle course as quickly as you can? I will watch from a safe distance...";
+            signText = "TEDRICK: Get ready newbie! This one is much harder than the last one! You can always catch the bus back home if you can't do it!";
         }
         if (PlayerPrefs.GetInt("CritterCave2Stars") > 0)
         {
             if (PlayerPrefs.GetInt("LastStars") == 1)
             {
-                signText = "Hans! Your performance was abismal! TERRIBLE I SAY! You need to go FASTER! I would try again before I moved on to Insect Island...";
+                signText = "TEDRICK: HAHAHA! What were you doing out there!?";
             }
             else if (PlayerPrefs.GetInt("LastStars") == 2)
             {
-                signText = "Hans! That wasn't too shabby! Next we will be training at Insect Island.";
+                signText = "TEDRICK: There is no way you can get three stars like me!";
             }
             else if (PlayerPrefs.GetInt("LastStars") == 3)
             {
-                signText = "EXCELLENT WORK HANS! We will continue training at Insect Island whenever you are ready.";
+                signText = "TEDRICK: Hmm... I think you cheated!";
             }
 
         }
         //INSECT ISLAND
         if (PlayerPrefs.GetString("InsectIsland1Completed") == "true")
         {
-            signText = "The next stage is the Insect Island obstacle course. ON YOUR MARKS.. OH! WAIT! We are not even at the course yet! Hurry up then! ";
+            signText = "TEDRICK: I can't believe how slow you have been in the last courses. Are you going to step it up?";
         }
         if (PlayerPrefs.GetInt("InsectIsland2Stars") > 0)
         {
             if (PlayerPrefs.GetInt("LastStars") == 1)
             {
-                signText = "Hans! Your performance was abismal! TERRIBLE I SAY! You need to go FASTER! I would try again before I moved on to Vermin Volcano...";
+                signText = "TEDRICK: I don't know what Albert sees in you. I would've sent you home already!";
             }
             else if (PlayerPrefs.GetInt("LastStars") == 2)
             {
-                signText = "Hans! That wasn't too shabby! Next we will be training at Vermin Volcano.";
+                signText = "TEDRICK: Mediocracy suits you.";
             }
             else if (PlayerPrefs.GetInt("LastStars") == 3)
             {
-                signText = "EXCELLENT WORK HANS! We will continue training at Vermin Volcano whenever you are ready.";
+                signText = "TEDRICK: You won't be so lucky at the next stage.";
             }
 
         }
         //VERMIN VOLCANO
         if (PlayerPrefs.GetString("VerminVolcano1Completed") == "true")
         {
-            signText = "Can you guess what the next stage is? A time attack? How did you know that? Hmm...";
+            signText = "TEDRICK: Have you ever considered changing your color to something a little more flashy?";
         }
         if (PlayerPrefs.GetInt("VerminVolcano2Stars") > 0)
         {
             if (PlayerPrefs.GetInt("LastStars") == 1)
             {
-                signText = "Hans! Your performance was abismal! TERRIBLE I SAY! You need to go FASTER! I would try again before I moved on to Kublar's Castle...";
+                signText = "TEDRICK: This is pathetic Hans! Tell me again, how did you qualify for the Jr. Olympics?";
             }
             else if (PlayerPrefs.GetInt("LastStars") == 2)
             {
-                signText = "Hans! That wasn't too shabby! Next we will be training at King Kublar's Castle.";
+                signText = "TEDRICK: That wasn't bad, but still not as good as my time.";
             }
             else if (PlayerPrefs.GetInt("LastStars") == 3)
             {
-                signText = "EXCELLENT WORK HANS! We will continue training at Kublar's Castle whenever you are ready.";
+                signText = "TEDRICK: Have you been copying my technique?";
             }
 
         }
         //KUBLAR CASTLE
         if (PlayerPrefs.GetString("KublarCastle1Completed") == "true")
         {
-            signText = "This next stage is your first obstacle course. Race to the goal as quickly as you can! No dilly-dallying!";
+            signText = "TEDRICK: This is it! I've only gotten two stars on this stage. Let's see how you do.";
         }
         if (PlayerPrefs.GetInt("KublarCastle2Stars") > 0)
         {
             if (PlayerPrefs.GetInt("LastStars") == 1)
             {
-                signText = "Hans! I know you can do better than that! Don't let Tedrick win!";
+                signText = "TEDRICK: I thought so, that's ok kid, there's always next year!";
             }
             else if (PlayerPrefs.GetInt("LastStars") == 2)
             {
-                signText = "Sonny! You are tied with Tedrick's record in Kublar Castle right now, you need one more star to beat him!";
+                signText = "TEDRICK: Well, you can't beat the best.";
             }
             else if (PlayerPrefs.GetInt("LastStars") == 3)
             {
-                signText = "EXCELLENT WORK SONNY BOY! I knew you could do it!";
+                signText = "TEDRICK: ... You actually did it, I can't believe it!";
             }
 
         }

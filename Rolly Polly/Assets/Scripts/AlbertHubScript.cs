@@ -106,7 +106,7 @@ public class AlbertHubScript : MonoBehaviour {
         //KUBLAR CASTLE
         if (PlayerPrefs.GetString("KublarCastle1Completed") == "true")
         {
-            signText = "This next stage is your first obstacle course. Race to the goal as quickly as you can! No dilly-dallying!";
+            signText = "This next stage is your final obstacle course. If you can get three stars, you will beat Tedrick!";
         }
         if (PlayerPrefs.GetInt("KublarCastle2Stars") > 0)
         {
