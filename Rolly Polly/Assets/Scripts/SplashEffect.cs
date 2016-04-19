@@ -25,6 +25,15 @@ public class SplashEffect : MonoBehaviour {
             particleSplash.Emit(20);
             splashSound.PlayOneShot(splash);
         }
+
+        if(other.attachedRigidbody.CompareTag("moveable"))
+        {
+            Debug.Log("On Trigger Enter Activated");
+            ParticleSystem barrelParticle = other.GetComponent<ParticleSystem>();
+            barrelParticle.Emit(20);
+            splashSound.PlayOneShot(splash);
+            Destroy(other, 3);
+        }
     }
     void OnTriggerExit(Collider other)
     {

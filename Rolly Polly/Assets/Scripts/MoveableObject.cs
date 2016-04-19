@@ -21,5 +21,11 @@ public class MoveableObject : MonoBehaviour {
     {
         rb.mass = 500;
     }
+
+    if (this.transform.position.y < -20)
+    {
+        Destroy(gameObject);
+
+    }
 	}
 }
