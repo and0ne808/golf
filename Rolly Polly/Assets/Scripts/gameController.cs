@@ -27,7 +27,7 @@ public class gameController : MonoBehaviour {
 
         if(playerController.megaSpeed)
         {
-            music.pitch = 2f;
+            music.pitch = 1.5f;
         }
         else
         {
