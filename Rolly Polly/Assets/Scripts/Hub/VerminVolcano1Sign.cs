@@ -19,7 +19,7 @@ public class VerminVolcano1Sign : MonoBehaviour {
 
         if(PlayerPrefs.GetString("VerminVolcano1Completed") == "true")
         {
-            signText = "You have found all the blueberries in Vermin Volcano! The Vermin Volcano Golf Course has been UNLOCKED!";
+            signText = "You have found all the blueberries in Vermin Volcano! The Vermin Volcano Obstacle Course has been UNLOCKED!";
         }
         else
         {

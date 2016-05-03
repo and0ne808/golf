@@ -17,7 +17,7 @@ public class KublarCastle2Sign : MonoBehaviour {
         img = panel.GetComponent<Image>();
         img.color = Color.clear;
 
-        string currentString = "Kublar Castle Golf Course\n";
+        string currentString = "Kublar Castle Obstacle Course\n";
         currentString += "Best Time: " + PlayerPrefs.GetFloat("KublarCastle2BestTime") + "\n";
         currentString += "Stars: " + PlayerPrefs.GetInt("KublarCastle2Stars");
 

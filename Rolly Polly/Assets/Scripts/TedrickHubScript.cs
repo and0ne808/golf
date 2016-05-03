@@ -26,15 +26,15 @@ public class TedrickHubScript : MonoBehaviour {
         }
         if(PlayerPrefs.GetInt("RolyPolyVillage2Stars") > 0)
         {
-            if(PlayerPrefs.GetInt("LastStars") == 1)
+            if (PlayerPrefs.GetInt("RolyPolyVillage2Stars") == 1)
             {
                 signText = "TEDRICK: HAHAHA! Boy are you SLOW! Better luck next time bud!";
             }
-            else if(PlayerPrefs.GetInt("LastStars") == 2)
+            else if (PlayerPrefs.GetInt("RolyPolyVillage2Stars") == 2)
             {
                 signText = "TEDRICK: I knew you couldn't get three stars!";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 3)
+            else if (PlayerPrefs.GetInt("RolyPolyVillage2Stars") == 3)
             {
                 signText = "TEDRICK: Hmm... That was beginner's luck!";
             }
@@ -47,15 +47,15 @@ public class TedrickHubScript : MonoBehaviour {
         }
         if (PlayerPrefs.GetInt("CritterCave2Stars") > 0)
         {
-            if (PlayerPrefs.GetInt("LastStars") == 1)
+            if (PlayerPrefs.GetInt("CritterCave2Stars") == 1)
             {
                 signText = "TEDRICK: HAHAHA! What were you doing out there!?";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 2)
+            else if (PlayerPrefs.GetInt("CritterCave2Stars") == 2)
             {
                 signText = "TEDRICK: There is no way you can get three stars like me!";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 3)
+            else if (PlayerPrefs.GetInt("CritterCave2Stars") == 3)
             {
                 signText = "TEDRICK: Hmm... I think you cheated!";
             }
@@ -68,15 +68,15 @@ public class TedrickHubScript : MonoBehaviour {
         }
         if (PlayerPrefs.GetInt("InsectIsland2Stars") > 0)
         {
-            if (PlayerPrefs.GetInt("LastStars") == 1)
+            if (PlayerPrefs.GetInt("InsectIsland2Stars") == 1)
             {
                 signText = "TEDRICK: I don't know what Albert sees in you. I would've sent you home already!";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 2)
+            else if (PlayerPrefs.GetInt("InsectIsland2Stars") == 2)
             {
                 signText = "TEDRICK: Mediocracy suits you.";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 3)
+            else if (PlayerPrefs.GetInt("InsectIsland2Stars") == 3)
             {
                 signText = "TEDRICK: You won't be so lucky at the next stage.";
             }
@@ -89,15 +89,15 @@ public class TedrickHubScript : MonoBehaviour {
         }
         if (PlayerPrefs.GetInt("VerminVolcano2Stars") > 0)
         {
-            if (PlayerPrefs.GetInt("LastStars") == 1)
+            if (PlayerPrefs.GetInt("VerminVolcano2Stars") == 1)
             {
                 signText = "TEDRICK: This is pathetic Hans! Tell me again, how did you qualify for the Jr. Olympics?";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 2)
+            else if (PlayerPrefs.GetInt("VerminVolcano2Stars") == 2)
             {
                 signText = "TEDRICK: That wasn't bad, but still not as good as my time.";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 3)
+            else if (PlayerPrefs.GetInt("VerminVolcano2Stars") == 3)
             {
                 signText = "TEDRICK: Have you been copying my technique?";
             }
@@ -110,15 +110,15 @@ public class TedrickHubScript : MonoBehaviour {
         }
         if (PlayerPrefs.GetInt("KublarCastle2Stars") > 0)
         {
-            if (PlayerPrefs.GetInt("LastStars") == 1)
+            if (PlayerPrefs.GetInt("KublarCastle2Stars") == 1)
             {
                 signText = "TEDRICK: I thought so, that's ok kid, there's always next year!";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 2)
+            else if (PlayerPrefs.GetInt("KublarCastle2Stars") == 2)
             {
                 signText = "TEDRICK: Well, you can't beat the best.";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 3)
+            else if (PlayerPrefs.GetInt("KublarCastle2Stars") == 3)
             {
                 signText = "TEDRICK: ... You actually did it, I can't believe it!";
             }

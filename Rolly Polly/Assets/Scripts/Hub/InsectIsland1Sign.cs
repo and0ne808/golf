@@ -19,7 +19,7 @@ public class InsectIsland1Sign : MonoBehaviour {
 
         if(PlayerPrefs.GetString("InsectIsland1Completed") == "true")
         {
-            signText = "You have found all the blueberries in Insect Island! The Insect Island Golf Course has been UNLOCKED!";
+            signText = "You have found all the blueberries in Insect Island! The Insect Island Obstacle Course has been UNLOCKED!";
         }
         else
         {

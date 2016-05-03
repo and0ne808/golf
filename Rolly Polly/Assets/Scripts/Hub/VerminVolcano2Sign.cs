@@ -17,7 +17,7 @@ public class VerminVolcano2Sign : MonoBehaviour {
         img = panel.GetComponent<Image>();
         img.color = Color.clear;
 
-        string currentString = "Vermin Volcano Golf Course\n";
+        string currentString = "Vermin Volcano Obstacle Course\n";
         currentString += "Best Time: " + PlayerPrefs.GetFloat("VerminVolcano2BestTime") + "\n";
         currentString += "Stars: " + PlayerPrefs.GetInt("VerminVolcano2Stars");
 

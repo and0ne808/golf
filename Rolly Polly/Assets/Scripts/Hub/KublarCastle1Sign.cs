@@ -19,7 +19,7 @@ public class KublarCastle1Sign : MonoBehaviour {
 
         if(PlayerPrefs.GetString("KublarCastle1Completed") == "true")
         {
-            signText = "You have found all the blueberries in Kublar's Castle! The Kublar's Castle Golf Course has been UNLOCKED!";
+            signText = "You have found all the blueberries in Kublar's Castle! The Kublar's Castle Obstacle Course has been UNLOCKED!";
         }
         else
         {

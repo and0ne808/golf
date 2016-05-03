@@ -15,7 +15,7 @@ public class TimerTextScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        currentString = Math.Round(golfController.golfTime, 2).ToString();
+        currentString = Math.Round(golfController.golfTime, 0).ToString();
 
 
     text.text = currentString;

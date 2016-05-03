@@ -19,7 +19,7 @@ public class CritterCave1Sign : MonoBehaviour {
 
         if(PlayerPrefs.GetString("CritterCave1Completed") == "true")
         {
-            signText = "You have found all the blueberries in Critter Cave! The Critter Cave Golf Course has been UNLOCKED!";
+            signText = "You have found all the blueberries in Critter Cave! The Critter Cave Obstacle Course has been UNLOCKED!";
         }
         else
         {

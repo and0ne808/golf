@@ -26,15 +26,15 @@ public class AlbertHubScript : MonoBehaviour {
         }
         if(PlayerPrefs.GetInt("RolyPolyVillage2Stars") > 0)
         {
-            if(PlayerPrefs.GetInt("LastStars") == 1)
+            if (PlayerPrefs.GetInt("RolyPolyVillage2Stars") == 1)
             {
                 signText = "Hans! Your performance was abismal! TERRIBLE I SAY! You need to go FASTER! I would try again before I moved on to Critter Cave...";
             }
-            else if(PlayerPrefs.GetInt("LastStars") == 2)
+            else if (PlayerPrefs.GetInt("RolyPolyVillage2Stars") == 2)
             {
                 signText = "Hans! That wasn't too shabby! Next we will be training at Critter Cave.";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 3)
+            else if (PlayerPrefs.GetInt("RolyPolyVillage2Stars") == 3)
             {
                 signText = "EXCELLENT WORK HANS! We will continue training at Critter Cave whenever you are ready.";
             }
@@ -47,15 +47,15 @@ public class AlbertHubScript : MonoBehaviour {
         }
         if (PlayerPrefs.GetInt("CritterCave2Stars") > 0)
         {
-            if (PlayerPrefs.GetInt("LastStars") == 1)
+            if (PlayerPrefs.GetInt("CritterCave2Stars") == 1)
             {
                 signText = "Hans! Your performance was abismal! TERRIBLE I SAY! You need to go FASTER! I would try again before I moved on to Insect Island...";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 2)
+            else if (PlayerPrefs.GetInt("CritterCave2Stars") == 2)
             {
                 signText = "Hans! That wasn't too shabby! Next we will be training at Insect Island.";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 3)
+            else if (PlayerPrefs.GetInt("CritterCave2Stars") == 3)
             {
                 signText = "EXCELLENT WORK HANS! We will continue training at Insect Island whenever you are ready.";
             }
@@ -68,15 +68,15 @@ public class AlbertHubScript : MonoBehaviour {
         }
         if (PlayerPrefs.GetInt("InsectIsland2Stars") > 0)
         {
-            if (PlayerPrefs.GetInt("LastStars") == 1)
+            if (PlayerPrefs.GetInt("InsectIsland2Stars") == 1)
             {
                 signText = "Hans! Your performance was abismal! TERRIBLE I SAY! You need to go FASTER! I would try again before I moved on to Vermin Volcano...";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 2)
+            else if (PlayerPrefs.GetInt("InsectIsland2Stars") == 2)
             {
                 signText = "Hans! That wasn't too shabby! Next we will be training at Vermin Volcano.";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 3)
+            else if (PlayerPrefs.GetInt("InsectIsland2Stars") == 3)
             {
                 signText = "EXCELLENT WORK HANS! We will continue training at Vermin Volcano whenever you are ready.";
             }
@@ -89,15 +89,15 @@ public class AlbertHubScript : MonoBehaviour {
         }
         if (PlayerPrefs.GetInt("VerminVolcano2Stars") > 0)
         {
-            if (PlayerPrefs.GetInt("LastStars") == 1)
+            if (PlayerPrefs.GetInt("VerminVolcano2Stars") == 1)
             {
                 signText = "Hans! Your performance was abismal! TERRIBLE I SAY! You need to go FASTER! I would try again before I moved on to Kublar's Castle...";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 2)
+            else if (PlayerPrefs.GetInt("VerminVolcano2Stars") == 2)
             {
                 signText = "Hans! That wasn't too shabby! Next we will be training at King Kublar's Castle.";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 3)
+            else if (PlayerPrefs.GetInt("VerminVolcano2Stars") == 3)
             {
                 signText = "EXCELLENT WORK HANS! We will continue training at Kublar's Castle whenever you are ready.";
             }
@@ -110,15 +110,15 @@ public class AlbertHubScript : MonoBehaviour {
         }
         if (PlayerPrefs.GetInt("KublarCastle2Stars") > 0)
         {
-            if (PlayerPrefs.GetInt("LastStars") == 1)
+            if (PlayerPrefs.GetInt("KublarCastle2Stars") == 1)
             {
                 signText = "Hans! I know you can do better than that! Don't let Tedrick win!";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 2)
+            else if (PlayerPrefs.GetInt("KublarCastle2Stars") == 2)
             {
                 signText = "Sonny! You are tied with Tedrick's record in Kublar Castle right now, you need one more star to beat him!";
             }
-            else if (PlayerPrefs.GetInt("LastStars") == 3)
+            else if (PlayerPrefs.GetInt("KublarCastle2Stars") == 3)
             {
                 signText = "EXCELLENT WORK SONNY BOY! I knew you could do it!";
             }

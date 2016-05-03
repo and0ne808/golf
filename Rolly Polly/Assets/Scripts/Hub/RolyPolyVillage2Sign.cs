@@ -17,7 +17,7 @@ public class RolyPolyVillage2Sign : MonoBehaviour {
         img = panel.GetComponent<Image>();
         img.color = Color.clear;
 
-        string currentString = "Roly Poly Village Golf Course\n";
+        string currentString = "Roly Poly Village Obstacle Course\n";
         currentString += "Best Time: " + PlayerPrefs.GetFloat("RolyPolyVillage2BestTime") + "\n";
         currentString += "Stars: " + PlayerPrefs.GetInt("RolyPolyVillage2Stars");
 

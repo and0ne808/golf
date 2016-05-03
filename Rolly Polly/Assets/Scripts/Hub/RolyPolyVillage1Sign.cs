@@ -19,7 +19,7 @@ public class RolyPolyVillage1Sign : MonoBehaviour {
 
         if(PlayerPrefs.GetString("RolyPolyVillage1Completed") == "true")
         {
-            signText = "You have found all the blueberries in Roly Poly Village! The Roly Poly Village Golf Course has been UNLOCKED!";
+            signText = "You have found all the blueberries in Roly Poly Village! The Roly Poly Village Obstacle Course has been UNLOCKED!";
         }
         else
         {

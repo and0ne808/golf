@@ -198,6 +198,7 @@ public class playerController : MonoBehaviour {
             rb.velocity = Vector3.zero;
             this.transform.position = new Vector3(initial_x, initial_y, initial_z);
             rb.Sleep();
+            golfController.golfTime = 0;
             
         }
 
@@ -213,7 +214,7 @@ public class playerController : MonoBehaviour {
             jumpSound.Play();
 
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Cancel"))
         {
             SceneManager.LoadScene("MainMenu");
         }

@@ -17,7 +17,7 @@ public class CritterCave2Sign : MonoBehaviour {
         img = panel.GetComponent<Image>();
         img.color = Color.clear;
 
-        string currentString = "Critter Cave Golf Course\n";
+        string currentString = "Critter Cave Obstacle Course\n";
         currentString += "Best Time: " + PlayerPrefs.GetFloat("CritterCave2BestTime") + "\n";
         currentString += "Stars: " + PlayerPrefs.GetInt("CritterCave2Stars");
 
